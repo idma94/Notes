@@ -1,0 +1,19 @@
+{
+  "directories": [
+    {
+      "id": 1,
+      "name": "Важные заметки"
+    }
+  ],
+
+  "notes" : [
+    {
+      "id": 1,
+      "directory_id": 1,
+      "title": "Hello world!!!",
+      "description": "My first note",
+      "date": "11.02.18"
+    }
+  ]
+
+}
