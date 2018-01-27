@@ -1,0 +1,29 @@
+.directory-container {
+  height: 100%;
+  width: 300px;
+  overflow: hidden;
+}
+
+.directory-content {
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: #F2F2F2;
+  padding: 24px 8px;
+}
+
+.directory {
+  padding-left: 16px;
+  height: 46px;
+  line-height: 44px;
+  font-size: .8rem;
+  font-family: "Avenir Next Cyr Bold", Helvitica, Arial, sans-serif;
+
+}
+.directory .directory__name {
+  height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
