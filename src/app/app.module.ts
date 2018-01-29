@@ -8,7 +8,6 @@ import {ServerService} from './shared/server.service';
 import {DirectoryListComponent} from './directory-list/directory-list.component';
 import {ModalComponent} from './modal/modal.component';
 import {NoteListComponent} from './note-list/note-list.component';
-import {CardComponent} from './card/card.component';
 import {NoteComponent} from './note/note.component';
 import {PaginationComponent} from './pagination/pagination.component';
 
@@ -19,7 +18,6 @@ import {PaginationComponent} from './pagination/pagination.component';
     DirectoryListComponent,
     ModalComponent,
     NoteListComponent,
-    CardComponent,
     NoteComponent,
     PaginationComponent
   ],
