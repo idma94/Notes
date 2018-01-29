@@ -30,6 +30,15 @@
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
+
+.directory__item.active {
+  border: 1px solid darkorange;
+}
+
 .directory__item:hover {
   background-color: rgba(0, 0, 0, .1);
+}
+
+.directory__item:focus {
+  outline: none;
 }

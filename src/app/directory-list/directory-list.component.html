@@ -1,7 +1,7 @@
 <section class="directory-container" [ngStyle]="modal.isActive ? {filter: 'blur(2px)'} : {}">
   <div class="directory-content">
     <ul class="directory">
-      <li class="directory__item" *ngFor="let dir of directories" (click)="selectDirectory(dir.id)">
+      <li class="directory__item " [class.active]="dir.id === directory" *ngFor="let dir of directories" (click)="selectDirectory(dir.id)">
         {{dir.name}}
       </li>
       <li class="directory__item" (click)="modal.openModal()">

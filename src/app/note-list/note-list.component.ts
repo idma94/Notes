@@ -3,7 +3,7 @@ import {Note} from '../shared/note';
 import {ServerService} from '../shared/server.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ModalComponent} from '../modal/modal.component';
-import {isNullOrUndefined} from "util";
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-note-list',
@@ -58,24 +58,22 @@ export class NoteListComponent implements OnInit {
 
   createNote(data) {
     this.server.createNote(data).subscribe(() => {
-      this.fetchData();
       this.createModal.closeModal();
-      this.form.reset();
+      this.resetNoteList();
     });
   }
 
   editNote(data) {
     this.server.updateNote(this.focusNote.id, data).subscribe(() => {
-      this.fetchData();
       this.editModal.closeModal();
-      this.form.reset();
+      this.resetNoteList();
     });
   }
 
   deleteNote() {
     this.server.deleteNote(this.focusNote.id).subscribe(() => {
-      this.fetchData();
       this.deleteModal.closeModal();
+      this.resetNoteList();
     });
   }
 
@@ -86,11 +84,16 @@ export class NoteListComponent implements OnInit {
     });
   }
 
+  resetNoteList() {
+    this.fetchData();
+    this.focusNote = null;
+    this.form.reset();
+  }
+
   pageChanged(page) {
     this.page = page;
     this.fetchData();
   }
-
 
   _formValidators() {
     return Validators.compose([Validators.required, Validators.minLength(3)]);
