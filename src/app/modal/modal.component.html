@@ -1,0 +1,16 @@
+<div class="modal-container" *ngIf="isActive">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">
+        {{title}}
+      </h3>
+    </div>
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="modal-footer">
+      <button class="button button-success" [disabled]="!isValid" (click)="onSuccess()">Сохранить</button>
+      <button class="button button-error" (click)="closeModal()">Отмена</button>
+    </div>
+  </div>
+</div>

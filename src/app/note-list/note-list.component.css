@@ -1,0 +1,58 @@
+/*:host {*/
+/*flex: 1;*/
+/*}*/
+.note-list {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.note-list-content {
+  background-color: #f8f8f8;
+  flex: 1 1 900px;
+}
+
+.note-list-footer {
+  height: 100px;
+  background-color: chocolate;
+  display: flex;
+  align-items: center;
+}
+
+.note-item {
+  display: flex;
+}
+
+.footer-button {
+  width: 150px;
+  margin: 8px;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, .87);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.footer-button:active {
+  background-color: #f6f6f6;
+  color: rgba(0, 0, 0, .87);
+}
+
+.footer-button:disabled {
+  color: rgba(0, 0, 0, .54);
+}
+
+/***/
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.textarea {
+  height: 200px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, .1);
+  font-family: "Avenir Next Cyr Light", Helvitica, Arial, sans-serif;
+  font-size: 16px;
+}
+

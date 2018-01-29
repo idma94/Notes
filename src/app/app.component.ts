@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {NoteListComponent} from './note-list/note-list.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  @ViewChild(NoteListComponent) noteList;
+
+  directoryChanged(id) {
+    this.noteList.directoryId = id;
+    this.noteList.init();
+    this.noteList.focusNote = null;
+  }
 }

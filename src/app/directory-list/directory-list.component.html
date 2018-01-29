@@ -1,14 +1,26 @@
-<section class="directory-container">
+<section class="directory-container" [ngStyle]="modal.isActive ? {filter: 'blur(2px)'} : {}">
   <div class="directory-content">
-    <div class="directory">
-      <span>
-        Lbhtrnjhbz 1
-      </span>
-      <div class="directory">
-        <div class="directory__name">
-          Lbhtrnjhbz 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa dolorem ipsa iste laborum magni optio quis, sunt. Aperiam at debitis excepturi exercitationem iure libero maxime nihil officia quo sunt?
-        </div>
-      </div>
-    </div>
+    <ul class="directory">
+      <li class="directory__item" *ngFor="let dir of directories" (click)="selectDirectory(dir.id)">
+        {{dir.name}}
+      </li>
+      <li class="directory__item" (click)="modal.openModal()">
+        <b>+ Добавить директорию</b>
+      </li>
+    </ul>
   </div>
 </section>
+
+<app-modal title="Создание директории"
+           [isValid]="form.valid"
+           (ok)="addDirectory(form.value)">
+  <form [formGroup]="form">
+    <label>
+      <span class="input-label">
+        Название директории
+      </span>
+      <input class="input" autofocus formControlName="name">
+    </label>
+  </form>
+</app-modal>
+

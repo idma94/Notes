@@ -10,20 +10,26 @@
   overflow-x: auto;
   overflow-y: hidden;
   background-color: #F2F2F2;
-  padding: 24px 8px;
 }
 
 .directory {
-  padding-left: 16px;
+  list-style: none;
+  padding: 0;
   height: 46px;
   line-height: 44px;
   font-size: .8rem;
   font-family: "Avenir Next Cyr Bold", Helvitica, Arial, sans-serif;
-
 }
-.directory .directory__name {
+
+.directory__item {
+  padding-left: 46px;
   height: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.directory__item:hover {
+  background-color: rgba(0, 0, 0, .1);
 }

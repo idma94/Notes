@@ -1,0 +1,13 @@
+<div class="note" [class.active]="isActive">
+  <div class="note-header">
+    <div class="note-title">
+      <div class="note-title_text">
+        {{note?.title || 'Без названия'}}
+      </div>
+    </div>
+
+    <div>{{note.date | date:'dd/MM/yy'}} - {{note.date | date:'HH:mm'}}</div>
+  </div>
+  <div class="note-body" [innerHtml]="note?.description">
+  </div>
+</div>

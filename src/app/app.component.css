@@ -1,0 +1,14 @@
+
+.test {
+  flex: 1 1 100%;
+  display: flex;
+  border: 1px dashed chocolate;
+}
+
+.block {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  border: 1px dashed cadetblue;
+}

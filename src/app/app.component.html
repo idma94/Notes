@@ -1,1 +1,6 @@
-<app-directory-list></app-directory-list>
+<div class="grid">
+  <app-directory-list (directoryChange)="directoryChanged($event)"></app-directory-list>
+  <div class="grid-item">
+    <app-note-list></app-note-list>
+  </div>
+</div>

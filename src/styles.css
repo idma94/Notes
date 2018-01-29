@@ -13,3 +13,68 @@ body {
   font-family: "Avenir Next Cyr Regular", Helvitica, Arial, sans-serif;
   font-size: 16px;
 }
+
+.button {
+  border: none;
+  border-radius: 0;
+  background-color: #E2E2E2;
+  padding: 6px 12px;
+  margin: 0 4px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, .54);
+}
+.button.disabled, .button[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.button-error {
+  background-color: rgba(185, 4, 9, 0.8);
+  color: #FFFFFF;
+}
+/*.button-error.disabled, .button-error[disabled]  {*/
+  /*background-color: rgba(185, 4, 9, 0.6);*/
+  /*color: rgba(255, 255, 255, 0.6);*/
+  /*cursor: not-allowed;*/
+/*}*/
+
+.button-success {
+  background-color: rgba(3, 185, 0, 0.85);
+  color: #FFFFFF;
+}
+
+.input {
+  font-size: 16px;
+  padding: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  display: block;
+  width: 100%;
+}
+
+/*  Grid*/
+.grid {
+  height: 100%;
+  display: flex;
+}
+.grid-row {
+  flex-direction: row;
+}
+.grid-row_wrap {
+  flex-wrap: wrap;
+}
+
+.grid-column {
+  flex-direction: column;
+}
+
+.grid-item {
+  flex: 1;
+}
+
+/*.button-success.disabled {*/
+  /*background-color: rgba(42, 185, 0, 0.6);*/
+  /*color: rgba(255, 255, 255, 0.6);*/
+  /*cursor: not-allowed;*/
+/*}*/
+

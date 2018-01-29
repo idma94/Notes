@@ -1,0 +1,76 @@
+.note {
+  margin: 8px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.note:hover, .active {
+  border-color: coral;
+}
+
+.note-list-content {
+  background-color: #f8f8f8;
+  flex: 1 1 900px;
+}
+
+.note-list-footer {
+  height: 100px;
+  background-color: chocolate;
+}
+
+.note-header {
+  display: flex;
+  height: 60px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.note-body {
+  flex: 1;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, .8);
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.note-footer {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.note-link {
+  font-size: 16px;
+  font-family: "Avenir Next Cyr Light", Helvitica, Arial, sans-serif;
+  padding: 0 8px;
+  color: rgba(0, 0, 0, .87);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.note-link:hover {
+  color: coral;
+}
+
+.note-title {
+  position: relative;
+  flex: auto;
+}
+
+.note-title_text {
+  position: absolute;
+  top: calc(50% - 20px);
+  font-family: "Avenir Next Cyr Light", Helvitica, Arial, sans-serif;
+  font-size: 21px;
+  line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}

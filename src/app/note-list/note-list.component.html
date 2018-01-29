@@ -1,0 +1,84 @@
+<div class="note-list">
+  <div class="note-list-content">
+    <div class="grid grid-row grid-row_wrap">
+      <app-note class="note-item"
+                *ngFor="let note of notes"
+                [note]="note"
+                [ngStyle]="gridSize"
+                [isActive]="note === focusNote"
+                (click)="focusNote = note">
+      </app-note>
+    </div>
+  </div>
+  <div class="note-list-footer">
+    <div class="footer_buttons">
+      <button class="button footer-button"
+              [disabled]="!directoryId"
+              (click)="createModal.openModal()">
+        Создать
+      </button>
+      <button class="button footer-button"
+              [disabled]="!focusNote"
+              (click)="editModal.openModal(); patchValue(focusNote)">
+        Редактировать
+      </button>
+      <button class="button footer-button"
+              [disabled]="!focusNote"
+              (click)="deleteModal.openModal()">
+        Удалить
+      </button>
+
+      <select class="button footer-button" [(ngModel)]="perPage">
+        <option [ngValue]="4">4</option>
+        <option [ngValue]="8">8</option>
+        <option [ngValue]="12">12</option>
+      </select>
+    </div>
+    <div class="grid-item">
+      <app-pagination [page]="page"
+                      [perPage]="perPage"
+                      [total]="total"
+                      (pageChanged)="pageChanged($event)">
+      </app-pagination>
+    </div>
+  </div>
+</div>
+
+<app-modal #createModal
+           title="Создание"
+           (ok)="createNote(form.value)"
+           [isValid]="form.valid">
+  <form class="form" [formGroup]="form">
+    <label>
+      <input class="input" autofocus formControlName="title">
+    </label>
+    <label>
+      <textarea class="textarea"  formControlName="description"></textarea>
+    </label>
+  </form>
+</app-modal>
+
+<app-modal #editModal
+           title="Редактирование"
+           (ok)="editNote(form.value)"
+           [isValid]="form.valid">
+  <form class="form" [formGroup]="form">
+    <label>
+      <input class="input" autofocus formControlName="title">
+    </label>
+    <label>
+      <textarea class="textarea" formControlName="description"></textarea>
+    </label>
+  </form>
+</app-modal>
+
+<app-modal #deleteModal
+           title="Удаление"
+           (ok)="deleteNote(focusNote)"
+           [isValid]="true">
+  <form [formGroup]="form">
+    Вы действительно хотите удалить
+  </form>
+</app-modal>
+
+

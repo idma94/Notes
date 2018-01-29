@@ -1,0 +1,18 @@
+<div class="pagination" >
+  <div class="pagination-button pagination-button_left" [class.disabled]="!hasPrev" (click)="pageChange(pervPage)">
+    Предыдущая
+  </div>
+
+  <div class="pagination-nav">
+
+    <div class="pagination-button" *ngIf="1 !== rangeStart" (click)="pageChange(1)">{{1}}</div>
+    <span *ngIf="1 !== rangeStart">...</span>
+    <div class="pagination-button" *ngFor="let i of pages" [class.active]="i === page" (click)="pageChange(i)">{{i}}</div>
+    <span *ngIf="totalPages > rangeEnd">...</span>
+    <div class="pagination-button" *ngIf="totalPages > rangeEnd" (click)="pageChange(totalPages)">{{totalPages}}</div>
+  </div>
+
+  <div class="pagination-button pagination-button_right" [class.disabled]="!hasNext" (click)="pageChange(nextPage)">
+    Слудующая
+  </div>
+</div>
