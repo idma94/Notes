@@ -9,8 +9,8 @@
       <ng-content></ng-content>
     </div>
     <div class="modal-footer">
-      <button class="button button-success" [disabled]="!isValid" (click)="onSuccess()">Сохранить</button>
-      <button class="button button-error" (click)="closeModal()">Отмена</button>
+      <button class="button button-success" [disabled]="!isValid" (click)="onSuccess()">{{textOk}}</button>
+      <button class="button button-error" (click)="closeModal()">{{textCancel}}</button>
     </div>
   </div>
 </div>

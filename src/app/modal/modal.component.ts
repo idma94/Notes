@@ -10,6 +10,8 @@ export class ModalComponent implements OnInit {
 
   @Input() title: string;
   @Input() isValid = false;
+  @Input() textOk = 'Сохранить';
+  @Input() textCancel = 'Отмена';
   @Output() ok = new EventEmitter();
 
   constructor() {

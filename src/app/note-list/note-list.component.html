@@ -74,6 +74,7 @@
 
 <app-modal #deleteModal
            title="Удаление"
+           textOk="Удалить"
            (ok)="deleteNote(focusNote)"
            [isValid]="true">
   <form [formGroup]="form">
